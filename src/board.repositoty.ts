@@ -1,13 +1,8 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { EntityRepository, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { Board } from './board.entity';
 import { CustomRepository } from './configs/typeorm-ex.decorator';
 import { CreateBoardDto } from './boards/dto/create-board.dto';
 import { BoardStatus } from './boards/board-status.enum';
-
-// @EntityRepository(Board)
-// export class BoardRepository extends Repository<Board> {}
 
 @CustomRepository(Board)
 export class BoardRepository extends Repository<Board> {
