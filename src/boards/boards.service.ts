@@ -1,11 +1,16 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Board } from 'src/board.entity';
 import { BoardRepository } from 'src/board.repositoty';
+import { BoardStatus } from './board-status.enum';
 import { CreateBoardDto } from './dto/create-board.dto';
 
 @Injectable()
 export class BoardsService {
   constructor(private boardRepository: BoardRepository) {}
+
+  async getAllBoards(): Promise<Board[]> {
+    return this.boardRepository.find();
+  }
 
   async getBoardById(id: number): Promise<Board> {
     const found = await this.boardRepository.findOne({ where: { id } });
@@ -26,5 +31,12 @@ export class BoardsService {
     if (result.affected === 0) {
       throw new NotFoundException(`Can't find Boadr with id ${id}`);
     }
+  }
+
+  async updateBoardStatus(id: number, status: BoardStatus): Promise<Board> {
+    const board = await this.getBoardById(id);
+    board.status = status;
+    await this.boardRepository.save(board);
+    return board;
   }
 }
