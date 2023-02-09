@@ -3,7 +3,7 @@
 - Node v18.12.1
 - Nest.js
 - PostgreSQL
-- TypeORM -> typeorm@0.2
+- TypeORM -> v0.3.12
 
 ## Installation
 
