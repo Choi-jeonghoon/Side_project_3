@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Board } from 'src/board.entity';
-import { BoardRepository } from 'src/board.repositoty';
+import { Board } from 'src/boards/board.entity';
+import { BoardRepository } from 'src/boards/board.repositoty';
 import { BoardStatus } from './board-status.enum';
 import { CreateBoardDto } from './dto/create-board.dto';
 

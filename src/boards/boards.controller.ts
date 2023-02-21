@@ -8,7 +8,7 @@ import {
   Post,
 } from '@nestjs/common/decorators';
 import { ParseIntPipe } from '@nestjs/common/pipes';
-import { Board } from 'src/board.entity';
+import { Board } from 'src/boards/board.entity';
 import { BoardStatus } from './board-status.enum';
 import { BoardsService } from './boards.service';
 import { CreateBoardDto } from './dto/create-board.dto';

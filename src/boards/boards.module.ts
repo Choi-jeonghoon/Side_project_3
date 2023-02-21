@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { BoardsController } from './boards.controller';
 import { Boards } from './boards';
 import { BoardsService } from './boards.service';
-import { BoardRepository } from 'src/board.repositoty';
+import { BoardRepository } from 'src/boards/board.repositoty';
 import { TypeOrmExModule } from 'src/configs/typeorm-ex.module';
 
 @Module({
